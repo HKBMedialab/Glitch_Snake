@@ -8,14 +8,24 @@ class SnakeBit {
   float angle=0;
   PImage image = new PImage(); // Liste der Bilder aus Folder
   boolean bHasImage=false;
+  boolean removeMe=false;
+
+  int birthdate;
 
   SnakeBit() {
+    birthdate=millis();
   }
 
 
   void update() {
     myColor=resetColor;
     bHasImage=false;
+
+    // timer
+    int now=millis();
+    if (now-birthdate>AGE) {
+      removeMe=true;
+    }
   }
 
 
@@ -50,8 +60,7 @@ class SnakeBit {
 
   void setImage(PImage img) {
     image=img;
-     bHasImage=true;
-
+    bHasImage=true;
   }
 
   void setColor(color c) {

@@ -17,10 +17,8 @@ class Animation {
   }
 
 
-
   void update() {
     counter+=1;
-
     for (int i=0; i<animationlength; i++) {
       int arrayposition=counter-i;
       if (arrayposition>=0 && arrayposition<snake.size()) {
@@ -32,11 +30,5 @@ class Animation {
         }
       }
     }
-  }
-
-
-  void render() {
-    fill(150, 255, 255);
-    rect(pos.x, pos.y, 20, 20);
   }
 }
