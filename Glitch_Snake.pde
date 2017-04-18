@@ -20,9 +20,13 @@ PImage [] images = new PImage[40]; // Liste der Bilder aus Folder
 final int AGE = 60000; 
 
 
+void settings(){
+  size(1400, 500,P2D);
+    smooth(8);
+}
+
 void setup() {
-  size(1400, 500);
-  frameRate(60);
+  frameRate(30);
   int n;
 
   // Load all Images
@@ -40,7 +44,7 @@ void setup() {
     }
   }
 
-  smooth();
+
   colorMode(HSB);
   background(0);
 }
