@@ -1,8 +1,8 @@
 class SnakeBit {
 
   PVector position=new PVector(0, 0, 0);
-  float rW=40;
-  float rH=40;
+  float rW=map(tablet.getPressure(), 0, 1, 1, 200);
+  float rH=map(tablet.getPressure(), 0, 1, 1, 200);
   color myColor=color(255, 255, 255);
   color resetColor=color(255, 0, 255);
   float angle=0;

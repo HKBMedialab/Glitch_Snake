@@ -75,6 +75,8 @@ void draw() {
     sn.render();
   }
   
+  textSize(20);
+text(str(frameRate), 10, 30); 
 }
 
 
@@ -97,11 +99,10 @@ void keyPressed() {
 
 
 void penLevelEvent(Tablet t){
-println(t.getPressure);
 }
 
 
-void mouseMoved() {
+void mouseDragged() {
   SnakeBit sn=new SnakeBit();
   sn.setPosition(new PVector(mouseX, mouseY));
   snake.add(sn);
