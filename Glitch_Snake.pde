@@ -26,7 +26,7 @@ void settings(){
 }
 
 void setup() {
-  frameRate(30);
+  frameRate(60);
   int n;
 
   // Load all Images
@@ -76,6 +76,9 @@ void draw() {
     SnakeBit sn=snake.get(i);
     sn.render();
   }
+  
+    if (frameCount % 10 == 0) println(frameRate);
+
 }
 
 
