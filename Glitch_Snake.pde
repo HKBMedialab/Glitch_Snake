@@ -11,10 +11,13 @@ ArrayList<Animation> animations = new ArrayList<Animation>();
 ArrayList<SnakeBit> snake = new ArrayList<SnakeBit>();
 PImage [] images = new PImage[40]; // Liste der Bilder aus Folder
 
-
+// Tablet
+import codeanticode.tablet.*;
+Tablet tablet;
 
 void setup() {
-  size(1400, 500);
+  size(1920, 1080);
+  tablet= new Tablet(this);
   int n;
 
   // Load all Images
@@ -71,6 +74,9 @@ void draw() {
     SnakeBit sn=snake.get(i);
     sn.render();
   }
+  
+  textSize(20);
+text(str(frameRate), 10, 30); 
 }
 
 
@@ -91,7 +97,12 @@ void keyPressed() {
   }
 }
 
-void mouseMoved() {
+
+void penLevelEvent(Tablet t){
+}
+
+
+void mouseDragged() {
   SnakeBit sn=new SnakeBit();
   sn.setPosition(new PVector(mouseX, mouseY));
   snake.add(sn);
